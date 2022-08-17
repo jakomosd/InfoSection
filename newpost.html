@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+
+<style>
+ header {
+font-family: Arial, Helvetica, sans-serif;
+margin-right: 0;
+background-color: gray;
+height: 5em;
+
+
+}
+
+body {
+padding-top:60px;
+font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.navbar {
+
+background-color:#4e95ff; 
+height:35px; 
+padding:14px; 
+border-bottom-left-radius:20px;
+position: fixed;
+width:100%;
+top:0;
+}
+
+#Logo { 
+text-align: center;
+}
+
+#btn {
+   background-color:gray;
+   width:200px;
+   height:50px;
+   display:inline-block;
+   border:solid 1px;
+   text-align:center;
+   line-height:50px;
+   font-family:arial;
+   font-weight:bold;
+   color:whte;
+ } 
+ 
+ #navigation a:hover {
+     color: red
+ }
+
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #e2c4dc;
+}
+
+.active {
+ background-color: #ce84be;
+}
+
+.active1 { 
+ background-color: #670067;
+ }
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: #e2c4dc;
+  
+  }
+  
+  .dropdown-content a:hover {background-color: #d8bfd8;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#place {
+height: 100px;
+
+}
+
+#place1 {
+height: 10px;
+
+}
+
+
+.main1 {
+text-align: left;
+}
+
+#Co {
+text-align: center;
+}
+
+ ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+
+
+#fussbereich {
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+
+}
+
+.dropbtn1 {
+background-color: cyan;
+height: 50px;
+width: 300px;
+border: solid 0px;
+color: white;
+border-radius: 16px;
+}
+
+.dropdown1 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  background: rgba(255, 255, 255, 0.21);
+  border-radius: 16px;
+  
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.1px);
+  -webkit-backdrop-filter: blur(8.1px);
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  line-height: 40px;
+  color: black;
+  height: 50px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+background: rgba(0, 149, 255, 0.06);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(15.7px);
+border-bottom:solid 2px white;
+-webkit-backdrop-filter: blur(15.7px);;
+
+}
+
+.dropdown1:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown1:hover .dropbtn1 {
+  background-color: cyan;
+   
+  color: white;
+}
+
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+  opacity:0;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+
+background: rgba(248, 248, 248, 0.52);
+
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(15.4px);
+-webkit-backdrop-filter: blur(15.4px);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 10px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: black;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  font-size: 25px;
+  margin-right: 5px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+.song1{
+
+padding:5px;
+border:solid 1px white;
+border-radius:11px;
+animation-duration: 0.2s;
+animation-name: Video;
+
+}
+
+
+.song1:hover{
+padding:5px;
+border:solid 1px white;
+box-shadow:2px 2px 20px silver;
+border-radius:11px;
+animation-duration: 0.2s;
+animation-name: Videohover;
+}
+
+
+
+@keyframes Videohover{
+  
+  from {border:solid 1px white;
+  box-shadow:0px 0px 0px white;}
+  to {border:solid 1px white;
+      box-shadow:2px 2px 20px silver;}
+}
+
+@keyframes Video{
+
+  from {border:solid 1px white;
+        box-shadow:2px 2px 20px silver;}
+  to { border:solid 1px white;
+  box-shadow:0px 0px 0px white;}
+
+}
+
+
+
+
+
+
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+background: rgba(248, 248, 248, 0.52);
+
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(15.4px);
+-webkit-backdrop-filter: blur(15.4px);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 10px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: black;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  font-size: 25px;
+  margin-right: 5px;
+}
+
+
+.Palce{
+display:none;
+height:250px; 
+width: 1%; 
+float:left;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Videoc{
+float:left;
+width:80%;
+background-color:;
+
+}
+
+
+
+.Videos{
+
+text-align:center;
+height:500000px;
+width:20%;
+background-color:;
+transform: translate(405%,0px);
+background-color:;
+}
+
+
+
+
+.title{
+
+font-size:30px;
+font-weight: bold;
+}
+
+.date{
+
+font-size:15px;
+font-weight: normal;
+margin-top:20px;
+}
+
+.action{
+background-color:transparent;
+border:solid 0px;
+}
+
+.iframe{
+width:100%;
+height:550px;
+border:solid 0px;
+
+}
+
+	#close2{
+display:none;
+
+
+}
+
+
+.SelectProvider{
+border:solid 2px #4e95ff;
+background-color:#4e95ff;
+padding:9px;
+color:white;
+border-radius:10px;
+font-size:15px;
+outline:none;
+animation-name: hover2;
+animation-duration: 0.5s ;
+}
+
+.SelectProvider:hover{
+border:solid 2px #4e95ff;
+background-color:white;
+padding:9px;
+color:#4e95ff;
+border-radius:10px;
+font-size:15px;
+outline:none;
+animation-name: hover2n;
+animation-duration: 0.5s ;
+}
+
+.UploadButton{
+border:solid 2px #4e95ff;
+background-color:#4e95ff;
+padding:10px;
+color:white;
+border-radius:10px;
+font-size:15px;
+animation-name: hover2;
+animation-duration: 0.5s ;
+}
+
+.UploadButton:hover{
+border:solid 2px #4e95ff;
+background-color:white;
+padding:10px;
+color:#4e95ff;
+border-radius:10px;
+font-size:15px;
+animation-name: hover2n;
+animation-duration: 0.5s ;
+}
+
+
+@keyframes hover2n{
+  from { 
+         background-color:#4e95ff; 
+		 color:white;
+  }
+  to { 
+       color:#4e95ff;
+       background-color:white; 
+  }
+}
+
+@keyframes hover2{
+  from {
+         background-color:white; 
+		 color:#4e95ff;
+  }
+  to {
+       background-color:#4e95ff; 
+	   color:white;
+  }
+}
+
+.HelpButton{
+border:solid 0px;
+background-color:white;
+padding-top:5px;
+color:silver;
+border-radius:10px;
+font-size:15px;
+}
+
+
+.txt{
+border:solid 2px #4e95ff;
+background-color:white;
+padding:10px;
+color:black;
+border-radius:10px;
+font-size:15px;
+outline:none;
+width:300px;
+}
+
+
+.Abschnit{
+float:left;
+margin-right:20px;
+margin-bottom:10px;
+
+
+
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 400px) {
+.iframe{
+width:100%;
+height:200px;
+border:solid 0px;
+
+}
+
+.Videos{
+background-color:;
+display:none;
+}
+
+
+.Videoc{
+float:left;
+width:100%;
+background-color:;
+
+}
+
+.txt{
+
+width:300px;
+}
+
+
+}
+
+@media screen and (max-width: 200px) {
+
+
+	#close2{
+display:block;
+
+
+}
+}
+
+
+
+
+
+
+
+</style>
+
+
+<head>
+<title>SimplexWatch</title>
+<link rel="shortcut icon" type="image/x-icon" href="icons/SimplexWatch.png" />
+<link rel="stylesheet" href="style.css" type="text/css"> 
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://kit.fontawesome.com/8dcd559cdc.js" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+<div id="mySidenav" class="sidenav">
+<center>
+  <div style="transform: translate(-5px,-4px); "><span style="font-size:30px; cursor:pointer;" id="close2" onclick="closeNav()">✕</span></div>
+
+  <img src="icons/PlayColor.png" height="60px">
+  </center>
+  <a href="https://simplex.tk/SimplexWatch"><i class="fa-solid fa-house"></i> Start</a>
+  <a href="#"><i class="fa-solid fa-music"></i> Music</a>
+  <a href="#"><i class="fa-solid fa-chart-line"></i> Trend</a>
+  <a href="index.html" id="Simplex"><i class="fa-solid fa-arrow-left"></i> Simplex</a>
+  <a href="#" style="display:none;"><i class="fa-solid fa-cards-blank"></i> SimplexClips</a>
+  <a href="upload.html"  id="UploadV"><i class="fa-solid fa-arrow-up-from-bracket"></i> Add new video</a>
+  <hr>
+  
+<a id="Simplex2" style="font-size:15px; cursor:pointer;">© Copyright 2021</a> 
+<a id="Simplex3" href="index.html" style="font-size:15px;">Simplex</a> 
+<a id="Simplex4" href="Impressum.html" style="font-size:15px;">Impressum</a> </h6>
+</div>
+
+
+
+
+
+
+<div id="main">
+<div style="" class="navbar">
+
+<div style="transform: translate(-5px,-4px); ">
+<span style="font-size:30px; cursor:pointer; float:left; color:white; display:none;" id="close" onclick="closeNav()">✕</span>
+</div>
+<div style="transform: translate(-5px,-4px); ">
+<span style="font-size:30px;cursor:pointer; float:left; color:white;" id="open" onclick="openNav()">&#9776;</span>
+</div>
+<img src="N.png" style="float:left; width:20px; height:5px;">
+<a href="">
+<div style="height:30px; width:45px; background-color:; float:left; ">
+<img src="icons/Logo.png" style="height:60px; transform: translate(-0px,-7px);">
+<br>
+</div>
+<div style="width:100px; height:20px; float:left; padding:4px; font-family: 'Signika Negative', sans-serif; color:white; transform: translate(15px, -30px);">
+<label style="font-size:95px;">InfoSection</label>
+</div>
+</a>
+
+</div>
+
+
+<body>
+
+<label class="title">Add new post</label><br><br>
+
+
+
+<br><br><br>
+
+
+ <form name="google-sheet">
+
+<div class="Abschnit">
+<label class="date">Enter Post<br>
+<input style="font-weight:bold;" id="Post" name="Post" type="text" class="txt" placeholder="Enter post..." required ><br><br><br>
+
+</div>
+
+
+
+<div class="Abschnit">
+<label class="date">Post ID</label><br>
+<input style="color:gray;" id="PostID" name="ID" type="text" class="txt" placeholder="If empty try again!" required readonly><br>
+</div>
+
+
+
+
+
+<input style="display:none;" id="Likes" name="Likes" type="text" class="txt" placeholder="If empty try again!" readonly>
+<input style="display:none;" id="Dislikes" name="Dislikes" type="text" class="txt" placeholder="If empty try again!" readonly>
+<input style="display:none;" id="Shared" name="Shared" type="text" class="txt" placeholder="If empty try again!" readonly>
+<input style="display:none;" id="Row" name="Row" value="=ROW()" type="text" class="txt" placeholder="If empty try again!" readonly>
+
+
+<br>
+
+
+
+<div style="width:100%; height:150px; background-color:;"></div>
+
+<button onclick="Goo();" class="UploadButton">Add post</button>
+
+
+<input id="tag1" name="tag1" type="text" class="txt" placeholder="Tag1 (X)" style="display:none;" >
+<input id="tag2" name="tag2" type="text" class="txt" placeholder="Tag2 URL (X)" style="display:none;" >
+
+
+
+
+
+    </form>
+
+<br>
+
+
+</div>
+</body>
+
+
+
+
+
+
+
+
+<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
+
+
+
+    
+    
+  
+ 
+</div>
+
+
+
+
+
+<script type="text/javascript">  
+var myWidget = cloudinary.createUploadWidget({
+  cloudName: 'dvtqqgfhq', 
+  uploadPreset: 'uzb15mhi'}, (error, result) => { 
+    if (!error && result && result.event === "success") { 
+      console.log('Done! Here is the image info: ', result.info); 
+	  
+	  
+	  
+	  
+	  
+	  NThumbnail = result.info['thumbnail_url'].replaceAll("h_60" , "h_1500");  
+	  console.log(NThumbnail); 
+      NNThumbnail = NThumbnail.replaceAll("w_90" , "w_1500");  
+	  console.log(NNThumbnail); 
+	  
+	  
+	  document.getElementById('Thumbnail').value = NNThumbnail;
+	  
+    }
+  }
+)
+
+document.getElementById("upload_widget").addEventListener("click", function(){
+    myWidget.open();
+  }, false);
+</script>
+
+
+
+
+<script>
+function Iframe(){
+
+if (window.top!=window.self)
+{
+  document.getElementById('Simplex').style.display = "none";
+  document.getElementById('Simplex2').style.display = "none";
+  document.getElementById('Simplex3').style.display = "none";
+  document.getElementById('Simplex4').style.display = "none";
+}
+else
+{
+  document.getElementById('Simplex').style.display = "block";
+  document.getElementById('Simplex2').style.display = "block";
+  document.getElementById('Simplex3').style.display = "block";
+  document.getElementById('Simplex4').style.display = "block";
+} 
+
+}
+
+</script>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("close").style.display = "block";
+  document.getElementById("open").style.display = "none";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.getElementById("close").style.display = "none";
+  document.getElementById("open").style.display = "block";
+}
+</script>
+
+
+
+
+    <script>
+        const btn = document.querySelector('#btn');
+        const sb = document.querySelector('#framework')
+        btn.onclick = (event) => {
+            event.preventDefault();
+            // show the selected index
+            alert(sb.selectedIndex);
+        };
+    </script>
+	
+	
+	
+	
+		<script>
+	function Goo(){
+	
+
+	
+
+	
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx5jtTutTFh7QVhJl9QKLbya7RMkTS5NawB72ZKRvVk8YeZ3gk2VxzlOYx-U42e4sMc/exec'
+        const form = document.forms['google-sheet']
+        
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => $("#form_alerts").html("<div class='alert alert-success'>Contact message sent successfully.</div>"))
+            .catch(error => $("#form_alerts").html("<div class='alert alert-danger'>Contact message not sent.</div>"))
+			document.getElementById('PostID').value = "";
+			document.getElementById('Post').value = "";
+			document.getElementById('Likes').value = "";
+			document.getElementById('Dislikes').value = "";
+			document.getElementById('Shared').value = "";
+			document.getElementById('Row').value = "";
+
+
+        })
+		}
+		
+
+	 
+		
+		
+    </script>
+	
+
+<script>
+let x = Math.random() * 10;
+document.getElementById("PostID").value = x;
+</script>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+
+
+
+
+
+
+

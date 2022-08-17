@@ -1,0 +1,845 @@
+
+
+
+
+<!DOCTYPE html>
+
+<style>
+
+ header {
+font-family: Arial, Helvetica, sans-serif;
+margin-right: 0;
+background-color: gray;
+height: 5em;
+
+
+}
+
+body {
+padding-top:20px;
+font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.navbar {
+
+background-color:#4e95ff; 
+height:35px; 
+padding:14px; 
+border-bottom-left-radius:20px;
+position: fixed;
+width:100%;
+top:0;
+}
+
+#Logo { 
+text-align: center;
+}
+
+#btn {
+   background-color:gray;
+   width:200px;
+   height:50px;
+   display:inline-block;
+   border:solid 1px;
+   text-align:center;
+   line-height:50px;
+   font-family:arial;
+   font-weight:bold;
+   color:whte;
+ } 
+ 
+ #navigation a:hover {
+     color: red
+ }
+
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #e2c4dc;
+}
+
+.active {
+ background-color: #ce84be;
+}
+
+.active1 { 
+ background-color: #670067;
+ }
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: #e2c4dc;
+  
+  }
+  
+  .dropdown-content a:hover {background-color: #d8bfd8;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#place {
+height: 100px;
+
+}
+
+#place1 {
+height: 10px;
+
+}
+
+
+.main1 {
+text-align: left;
+}
+
+#Co {
+text-align: center;
+}
+
+ ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+
+
+#fussbereich {
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+
+}
+
+.dropbtn1 {
+background-color: cyan;
+height: 50px;
+width: 300px;
+border: solid 0px;
+color: white;
+border-radius: 16px;
+}
+
+.dropdown1 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  background: rgba(255, 255, 255, 0.21);
+  border-radius: 16px;
+  
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.1px);
+  -webkit-backdrop-filter: blur(8.1px);
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  line-height: 40px;
+  color: black;
+  height: 50px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+background: rgba(0, 149, 255, 0.06);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(15.7px);
+border-bottom:solid 2px white;
+-webkit-backdrop-filter: blur(15.7px);;
+
+}
+
+.dropdown1:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown1:hover .dropbtn1 {
+  background-color: cyan;
+   
+  color: white;
+}
+
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+  opacity:0;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+
+background: rgba(248, 248, 248, 0.52);
+
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(15.4px);
+-webkit-backdrop-filter: blur(15.4px);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 10px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: black;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  font-size: 25px;
+  margin-right: 5px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+.song1{
+
+padding:5px;
+border:solid 1px white;
+border-radius:11px;
+animation-duration: 0.2s;
+animation-name: Video;
+
+}
+
+
+.song1:hover{
+padding:5px;
+border:solid 1px white;
+box-shadow:2px 2px 20px silver;
+border-radius:11px;
+animation-duration: 0.2s;
+animation-name: Videohover;
+}
+
+
+
+@keyframes Videohover{
+  
+  from {border:solid 1px white;
+  box-shadow:0px 0px 0px white;}
+  to {border:solid 1px white;
+      box-shadow:2px 2px 20px silver;}
+}
+
+@keyframes Video{
+
+  from {border:solid 1px white;
+        box-shadow:2px 2px 20px silver;}
+  to { border:solid 1px white;
+  box-shadow:0px 0px 0px white;}
+
+}
+
+
+
+
+
+
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+background: rgba(248, 248, 248, 0.52);
+
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(15.4px);
+-webkit-backdrop-filter: blur(15.4px);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 10px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: black;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  font-size: 25px;
+  margin-right: 5px;
+}
+
+
+.Palce{
+display:none;
+height:250px; 
+width: 1%; 
+float:left;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Videoc{
+float:left;
+width:80%;
+background-color:;
+
+}
+
+
+
+.Videos{
+
+text-align:center;
+height:500000px;
+width:20%;
+background-color:;
+transform: translate(405%,0px);
+background-color:;
+}
+
+
+
+
+.title{
+
+font-size:20px;
+font-weight: bold;
+}
+
+.date{
+
+font-size:15px;
+font-weight: normal;
+margin-top:20px;
+}
+
+.action{
+background-color:transparent;
+border:solid 0px;
+}
+
+.iframe{
+width:100%;
+height:550px;
+border:solid 0px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 400px) {
+.iframe{
+width:100%;
+height:200px;
+border:solid 0px;
+
+}
+
+.Videos{
+background-color:;
+display:none;
+}
+
+
+.Videoc{
+float:left;
+width:100%;
+background-color:;
+
+}
+
+
+}
+
+	#close2{
+display:none;
+
+
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 200px) {
+
+
+	#close2{
+display:block;
+
+
+}
+
+
+}
+
+.card {
+padding:10px;
+border:solid 1px #4e95ff;
+border-radius:10px;
+animation-duration: 0.2s;
+animation-name: Video;
+width:100%;
+height:auto;
+text-align:left;
+margin-right:20px;
+margin-bottom:20px;
+
+float:left;
+}
+
+.card:hover{
+padding:10px;
+border:solid 1px #80bfff;
+
+animation-duration: 0.2s;
+animation-name: Videohover;
+}
+
+
+
+
+
+
+@keyframes Videohover{
+  
+  from {border:solid 1px #4e95ff;}
+  to {border:solid 1px #80bfff;}
+}
+
+@keyframes Video{
+
+  from {border:solid 1px #80bfff;}
+  to { border:solid 1px #4e95ff;}
+
+}
+
+
+.Likes{
+border:solid 2px #4e95ff;
+background-color:#4e95ff;
+color:white;
+border-radius:10px;
+padding:2px;
+width:50px;
+margin-top:10px;
+}
+
+
+.lbutton{
+
+padding:8px; 
+border:solid 1.5px #e0e0e0; 
+background-color:#4e95ff; 
+border-radius:5px; 
+color:white;
+transform:translate(70px, 0px);
+}
+
+.lbutton:active{
+
+padding:8px; 
+border:solid 1.5px #e0e0e0; 
+background-color:#0582ff; 
+border-radius:5px; 
+color:white;
+
+}
+
+
+#UploadV{
+
+display:none;
+
+}
+
+@media screen and (max-width: 440px) {
+   .song1{
+    width:100%;
+	height:240px;
+	background-color:;
+	}
+	
+	
+    .Img{
+
+     width:100%;
+    height:auto;
+
+    }
+	
+	.lbutton{
+
+display:none;
+}
+
+#UploadV{
+
+display:block;
+
+}
+
+	
+}
+
+
+</style>
+
+<head>
+<title>InfoSection</title>
+<link rel="shortcut icon" type="image/x-icon" href="icons/Logo.png" />
+<link rel="stylesheet" href="style.css" type="text/css"> 
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://kit.fontawesome.com/8dcd559cdc.js" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="mySidenav" class="sidenav">
+<center>
+  <div style="transform: translate(-5px,-4px); "><span style="font-size:30px; cursor:pointer;" id="close2" onclick="closeNav()">✕</span></div>
+
+
+  </center>
+  <a href="https://simplex.tk/SimplexWatch"><i class="fa-solid fa-house"></i> Start</a>
+
+  <a href="index.html" id="Simplex"><i class="fa-solid fa-arrow-left"></i> Simplex</a>
+
+  <a href="upload.html"  id="UploadV"><i class="fa-solid fa-arrow-up-from-bracket"></i> Add new post</a>
+  <hr>
+  
+<a id="Simplex2" style="font-size:15px; cursor:pointer;">© Copyright 2021</a> 
+<a id="Simplex3" href="index.html" style="font-size:15px;">Simplex</a> 
+<a id="Simplex4" href="Impressum.html" style="font-size:15px;">Impressum</a> </h6>
+</div>
+
+
+
+
+
+
+<div id="main">
+<div style="" class="navbar">
+
+<div style="transform: translate(-5px,-4px); ">
+<span style="font-size:30px; cursor:pointer; float:left; color:white; display:none;" id="close" onclick="closeNav()">✕</span>
+</div>
+<div style="transform: translate(-5px,-4px); ">
+<span style="font-size:30px;cursor:pointer; float:left; color:white;" id="open" onclick="openNav()">&#9776;</span>
+</div>
+<img src="N.png" style="float:left; width:20px; height:5px;">
+<a href="">
+<div style="height:30px; width:45px; background-color:; float:left; ">
+<img src="icons/Logo.png" style="height:60px; transform: translate(-0px,-7px);">
+<br>
+</div>
+<div style="width:100px; height:20px; float:left; padding:4px; font-family: 'Signika Negative', sans-serif; color:white; transform: translate(15px, -30px);">
+<label style="font-size:95px;">InfoSection</label>
+</div>
+</a>
+<div style="padding:4px; font-family: 'Signika Negative', sans-serif; color:white; transform: translate(330px, 0px);">
+
+
+<a href="newpost.html">
+<button class="lbutton" id="File">Add new post</button>
+</a>
+<a>
+<button class="lbutton" id="File">Discover</button>
+</a>
+</div>
+</div>
+
+
+
+
+<br><br>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
+
+
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("close").style.display = "block";
+  document.getElementById("open").style.display = "none";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.getElementById("close").style.display = "none";
+  document.getElementById("open").style.display = "block";
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+	
+
+<script>
+
+
+
+fetch("https://sheetdb.io/api/v1/2d6i01pxtyzxj")
+    .then(response => response.json())
+    .then(data =>{
+
+
+           
+           console.log(data)
+          
+
+    if(data.length > 0){
+
+    data1 = data.reverse()
+    data1.forEach((u) => {
+
+
+
+var Video = document.createElement('div');
+Video.id = u.ID;
+console.log(Video.id);
+Video.className = 'card';
+document.getElementsByTagName('body')[0].appendChild(Video);
+	 
+
+	
+
+	
+var Title = document.createElement('div');
+Title.id = 'block';
+Title.className = '';
+Title.innerHTML = u.Post;
+Video.appendChild(Title); 
+	 
+	 
+var Likes = document.createElement('div');
+Likes.id = u.Row;
+Likes.className = 'Likes';
+Likes.innerHTML = '👍' + u.Likes;
+Video.appendChild(Likes); 
+
+
+
+	
+
+
+
+Likes.onclick = function() { 
+ 
+ 
+ 
+}
+
+
+}
+	})
+
+}
+
+
+})
+</script>
